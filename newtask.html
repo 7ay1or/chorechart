@@ -1,47 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>ChoreChart - New Task</title>
-</head>
-<body>
-<header>
-  <nav class="navbar">
+  <head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ChoreChart - New Task</title>
+  </head>
+  <body>
+    <header>
+      <nav class="navbar">
+        <div class="container">
+          <a class="navbar-brand" href="#">Chore Chart</a>
+          <a class="log out" href="/logout">Log out</a>
+        </div>
+      </nav>
+    </header>
     <div class="container">
-      <a class="navbar-brand" href="#">Chore Chart</a>
-      <a class="log out" href="/logout">Log out</a>
-    </div>
-  </nav>
-</header>
-<div class="flex-shrink-0">
-    <div class="container">
-        <h1>Add Task</h1>
-        <form class="add-form">
-          <div class="form-control">
-            <label for="task-name">Task Name</label>
-            <input type="text" id="task-name" name="task-name">
-          </div>
-          <div class="form-control">
-            <label for="assignee">Assignee</label>
-            <input type="text" id="assignee" name="assignee">
-          </div>
-          <div class="form-control">
-            <label for="frequency">Frequency</label>
-            <input type="text" id="frequency" name="frequency">
-          </div>
-          <div class="form-control">
-            <label for="due-day">Due Day</label>
-            <input type="text" id="due-day" name="due-day">
-          </div>
-          <div class="form-control">
-            <label for="note">Note</label>
-            <textarea name="note" id="notes">leave some notes...</textarea>
-          </div>
-        </form>
+      <h1>Add Task</h1>
+      <form class="add-form">
+        <label for="task-name">Task Name</label>
+        <input type="text" id="task-name" name="task-name"><br/>
+        <label for="assignee">Assignee</label>
+        <input type="text" id="assignee" name="assignee"><br/>
+        <label for="frequency">Frequency</label>
+        <input type="text" id="frequency" name="frequency"><br/>
+        <label for="due-day">Due Day</label>
+        <input type="text" id="due-day" name="due-day"><br/>
+        <label for="note">Note</label>
+        <textarea name="note" id="notes">leave some notes...</textarea><br/>
         <input class="btn" type="submit" value="Save Task">
-      </div>
+      </form>
     </div>
   </body>
 </html>
