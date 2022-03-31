@@ -1,16 +1,14 @@
-console.log("hello world")
+console.log("hello world");
 
 var today = new Date();
-var hours = String(today.getHours())
+var hours = String(today.getHours());
 
-time  = ""
+time = "";
 
 if (hours > 12) {
-    time = "night"
-}
-else {
-    time = "morning"
+  time = "night";
+} else {
+  time = "morning";
 }
 
-console.log(time)
-
+console.log(time);
