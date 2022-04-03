@@ -21,6 +21,7 @@ router.post("/", async (req, res) => {
   let task = new Task({
     name: req.body.name,
     frequency: req.body.frequency,
+    assignee: req.body.assignee,
     due_date: req.body.due_date,
     comments: req.body.comments,
   });
