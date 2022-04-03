@@ -1,14 +1,32 @@
+function taskSubmit() {
+  let taskName = document.getElementById("taskname").value;
+  let assignee = document.getElementById("assignee").value;
+  let frequency = document.getElementById("frequency").value;
+  let duedate = document.getElementById("duedate").value;
+  let comments = document.getElementById("comments").value;
 
-function taskSubmit(){
-    console.log("Yay were linked and we ran on task submit")
+  const task = {
+    name: taskName,
+    assignee: assignee,
+    frequency: frequency,
+    due_date: new Date(duedate),
+    comments: comments,
+  };
 
-    let taskName = document.getElementById("formControlInput").value
+  postAPI(task);
+}
 
-    console.log("We got out first form value and it's " + taskName)
+function postAPI(content) {
+  const url = "/api/tasks";
+  const options = {
+    method: "POST",
+    body: JSON.stringify(content),
+    headers: {
+      "Content-Type": "application/json",
+    },
+  };
 
-    let assignee = document.getElementById("formControlSelect").value
-
-    console.log(assignee)
-
-    
+  fetch(url, options)
+    .then((res) => res.json())
+    .then((res) => console.log(res));
 }
