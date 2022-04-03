@@ -13,20 +13,22 @@ function taskSubmit() {
     comments: comments,
   };
 
-  postAPI(task);
+  TaskAPI.saveTask(task);
 }
+class TaskAPI {
+  static url = "/api/tasks";
 
-function postAPI(content) {
-  const url = "/api/tasks";
-  const options = {
-    method: "POST",
-    body: JSON.stringify(content),
-    headers: {
-      "Content-Type": "application/json",
-    },
-  };
+  static saveTask(task) {
+    const options = {
+      method: "POST",
+      body: JSON.stringify(task),
+      headers: {
+        "Content-Type": "application/json",
+      },
+    };
 
-  fetch(url, options)
-    .then((res) => res.json())
-    .then((res) => console.log(res));
+    fetch(this.url, options)
+      .then((res) => res.json())
+      .then((res) => console.log(res));
+  }
 }
