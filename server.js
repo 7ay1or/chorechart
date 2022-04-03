@@ -2,7 +2,6 @@ const express = require("express");
 const mongoose = require("mongoose");
 const tasks = require("./routes/tasks");
 const app = express();
-const helper = require("./helper");
 
 app.use(express.json());
 app.use(express.static(__dirname + "/public"));
@@ -15,7 +14,7 @@ mongoose
   .catch((err) => console.error("Could not connect to MongoDB..."));
 
 app.get("/", (req, res) => {
-  res.render("pages/index", { helper: helper });
+  res.render("pages/index");
 });
 
 app.get("/newtask", (req, res) => {

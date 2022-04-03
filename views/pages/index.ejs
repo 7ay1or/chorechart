@@ -2,13 +2,15 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
-    <script src="/js/header.js"></script>
   </head>
+
   <body>
     <%- include('../partials/header'); %>
     <div class="container">
-      <h1 class="text-center">Good <%= helper.getTimeOfDay() %>, roomie!</h1>
+      <h1 class="text-center" id="greeting"></h1>
     </div>
+
+    <script src="/js/dashboard.js"></script>
     <%- include('../partials/footer'); %>
   </body>
 </html>
