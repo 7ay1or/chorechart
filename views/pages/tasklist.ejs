@@ -7,69 +7,27 @@
   <body>
     <%- include('../partials/header'); %>
 
-    <div class="container-fluid">
-      <div class="col-md-4 col-lg-4 col-xl-3 mx-auto">
-        <h1>Today's Tasks</h1>
-        <div class="row">
-          <ul>
-            <li>Added Task 1: Wash Dishes</li>
-            <button class="btn">Not Completed</button>
-            <li>Added Task 2: Groceries</li>
-            <button class="btn">Completed</button>
-            <li>Added Task 3: Sweep</li>
-            <button class="btn">Completed</button>
-            <li>Added Task 4: Laundry</li>
-            <button class="btn">Not Completed</button>
-            <li>Added Task 5: Mow the Lawn</li>
-            <button class="btn">Completed</button>
-            <li>Added Task 6: Tidy Livingroom</li>
-            <button class="btn">Completed</button>
-            <li>Added Task 7: Clean Bathroom</li>
-            <button class="btn">Completed</button>
-            <li>Added Task 8: Cook Dinner</li>
-            <button class="btn">Not Completed</button>
-          </ul>
-        </div>
-        <div class="container">
-          <h1>Upcoming Tasks</h1>
-          <div class="row">
-            <ul>
-              <li>Added Task 1: Wash Dishes</li>
-              <button>Not Completed</button>
-              <li>Added Task 2: Groceries</li>
-              <button>Not Completed</button>
-              <li>Added Task 3: Sweep</li>
-              <button>Not Completed</button>
-              <li>Added Task 4: Laundry</li>
-              <button>Not Completed</button>
-              <li>Added Task 5: Mow the Lawn</li>
-              <button>Not Completed</button>
-              <li>Added Task 6: Tidy Livingroom</li>
-              <button>Not Completed</button>
-              <li>Added Task 7: Clean Bathroom</li>
-              <button>Not Completed</button>
-              <li>Added Task 8: Cook Dinner</li>
-              <button>Not Completed</button>
-            </ul>
-          </div>
-        </div>
-        <div class="container">
-          <h1>Recently Completed</h1>
-          <div class="row">
-            <ul>
-              <li>Task 1: Completed by: Jake</li>
-              <li>Task 2: Completed by: Jennifer</li>
-              <li>Task 3: Completed by: Bob</li>
-              <li>Task 4: Completed by: Moe</li>
-              <li>Task 5: Completed by: Larry</li>
-              <li>Task 6: Completed by: Curly</li>
-              <li>Task 7: Completed by: Colin</li>
-              <li>Task 8: Completed by: Zoe</li>
-            </ul>
-          </div>
-        </div>
+    <div class="container">
+      <div class="card">
+        <div class="card-header"><span>Today&#39;s Tasks</span></div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Item 1</li>
+          <li class="list-group-item">Item 2</li>
+          <li class="list-group-item">Item 3</li>
+          <li class="list-group-item">Item 4</li>
+        </ul>
+      </div>
+      <div class="card">
+        <div class="card-header"><span>Upcoming Tasks</span></div>
+        <ul class="list-group list-group-flush">
+          <li class="list-group-item">Item 1</li>
+          <li class="list-group-item">Item 2</li>
+          <li class="list-group-item">Item 3</li>
+          <li class="list-group-item">Item 4</li>
+        </ul>
       </div>
     </div>
+
     <%- include('../partials/footer'); %>
   </body>
 </html>
