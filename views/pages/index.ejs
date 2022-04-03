@@ -2,9 +2,14 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
+    <script src="/js/header.js"></script>
   </head>
   <body>
-    <%- include('../partials/header'); %> <%- include('../partials/footer'); %>
-    <%- include('../partials/bootstrap'); %>
+    <%- include('../partials/header'); %>
+
+    <p>Good <%= helper.getTimeOfDay() %>, roomie!</p>
+
+    <%- include('../partials/footer'); %> <%- include('../partials/bootstrap');
+    %>
   </body>
 </html>
