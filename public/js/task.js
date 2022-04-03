@@ -16,6 +16,8 @@ function taskSubmit() {
   TaskAPI.saveTask(task);
 }
 class TaskAPI {
+  constructor() {}
+
   static url = "/api/tasks";
 
   static saveTask(task) {
@@ -32,3 +34,19 @@ class TaskAPI {
       .then((res) => console.log(res));
   }
 }
+
+function renderTasks() {
+  let tasklist = document.getElementById("tasklist");
+
+  fetch("/api/tasks")
+    .then((res) => res.json())
+    .then((data) => {
+      data.map((task) => {
+        let li = document.createElement("li");
+        li.className = "list-group-item";
+        li.textContent = task.name;
+        tasklist.append(li);
+      });
+    });
+}
+renderTasks();

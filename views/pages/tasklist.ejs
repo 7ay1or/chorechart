@@ -9,25 +9,12 @@
 
     <div class="container w-75">
       <div class="card">
-        <div class="card-header"><span>Today&#39;s Tasks</span></div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Item 1</li>
-          <li class="list-group-item">Item 2</li>
-          <li class="list-group-item">Item 3</li>
-          <li class="list-group-item">Item 4</li>
-        </ul>
-      </div>
-      <div class="card">
-        <div class="card-header"><span>Upcoming Tasks</span></div>
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item">Item 1</li>
-          <li class="list-group-item">Item 2</li>
-          <li class="list-group-item">Item 3</li>
-          <li class="list-group-item">Item 4</li>
-        </ul>
+        <div class="card-header"><span>Tasks</span></div>
+        <ul id="tasklist" class="list-group list-group-flush"></ul>
       </div>
     </div>
 
     <%- include('../partials/footer'); %>
+    <script src="/js/task.js"></script>
   </body>
 </html>
