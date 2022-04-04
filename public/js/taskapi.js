@@ -20,7 +20,7 @@ export class TaskAPI {
   static getTasks() {
     let tasklist = document.getElementById("tasklist");
 
-    fetch("/api/tasks")
+    fetch(this.url)
       .then((res) => res.json())
       .then((data) => {
         data.map((task) => {
