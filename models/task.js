@@ -1,4 +1,4 @@
-const mongoose = require("mongoose");
+import mongoose from "mongoose";
 
 const Task = mongoose.model(
   "Task",
@@ -27,4 +27,4 @@ const Task = mongoose.model(
   })
 );
 
-exports.Task = Task;
+export default Task;

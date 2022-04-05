@@ -1,6 +1,6 @@
-const { Task } = require("../models/task");
-const mongoose = require("mongoose");
-const express = require("express");
+import Task from "../models/task.js";
+import mongoose from "mongoose";
+import express from "express";
 const router = express.Router();
 
 router.get("/", async (req, res) => {
@@ -54,4 +54,4 @@ router.delete("/:id", async (req, res) => {
   res.send(task);
 });
 
-module.exports = router;
+export { router as tasks };

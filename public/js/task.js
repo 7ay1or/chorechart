@@ -1,6 +1,6 @@
 import { TaskAPI } from "./taskapi.js";
 
-function taskSubmit() {
+export default function taskSubmit() {
   let taskName = document.getElementById("taskname").value;
   let assignee = document.getElementById("assignee").value;
   let frequency = document.getElementById("frequency").value;
@@ -17,5 +17,3 @@ function taskSubmit() {
 
   TaskAPI.saveTask(task);
 }
-
-TaskAPI.getTasks();

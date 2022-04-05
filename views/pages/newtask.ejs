@@ -2,7 +2,6 @@
 <html lang="en">
   <head>
     <%- include('../partials/head'); %>
-    <script src="/js/task.js"></script>
   </head>
   <body>
     <%- include('../partials/header'); %>
@@ -41,17 +40,15 @@
           maxlength="256"
           name="comments"
         ></textarea>
-        <button
-          id="submit"
-          onClick="taskSubmit()"
-          class="btn btn-primary"
-          type="button"
-        >
+        <button id="submit" class="btn btn-primary" type="button">
           Add Task
         </button>
       </form>
     </div>
-    <script src="/js/task.js" type="module"></script>
+    <script type="module">
+      import taskSubmit from "/js/task.js";
+      document.getElementById("submit").addEventListener("click", taskSubmit);
+    </script>
     <%- include('../partials/footer'); %>
   </body>
 </html>

@@ -15,6 +15,9 @@
     </div>
 
     <%- include('../partials/footer'); %>
-    <script src="/js/task.js" type="module"></script>
+    <script type="module">
+      import { TaskAPI } from "/js/taskapi.js";
+      TaskAPI.getTasks();
+    </script>
   </body>
 </html>

@@ -1,10 +1,10 @@
-const express = require("express");
-const mongoose = require("mongoose");
-const tasks = require("./routes/tasks");
+import express from "express";
+import mongoose from "mongoose";
+import { tasks } from "./routes/tasks.js";
 const app = express();
 
 app.use(express.json());
-app.use(express.static(__dirname + "/public"));
+app.use(express.static("public"));
 app.use("/api/tasks", tasks);
 app.set("view engine", "ejs");
 
