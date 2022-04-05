@@ -1,4 +1,4 @@
-import Task from "../models/task.js";
+import { Task, validate } from "../models/task.js";
 import mongoose from "mongoose";
 import express from "express";
 const router = express.Router();
@@ -18,10 +18,13 @@ router.get("/:id", async (req, res) => {
 });
 
 router.post("/", async (req, res) => {
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
   let task = new Task({
     name: req.body.name,
-    frequency: req.body.frequency,
     assignee: req.body.assignee,
+    frequency: req.body.frequency,
     due_date: req.body.due_date,
     comments: req.body.comments,
   });
@@ -32,10 +35,14 @@ router.post("/", async (req, res) => {
 });
 
 router.put("/:id", async (req, res) => {
+  const { error } = validate(req.body);
+  if (error) return res.status(400).send(error.details[0].message);
+
   const task = Task.findByIdAndUpdate(
     req.body.id,
     {
       name: req.body.name,
+      assignee: req.body.assignee,
       frequency: req.body.frequency,
       due_date: req.body.due_date,
       comments: req.body.comments,

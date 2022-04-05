@@ -1,6 +1,7 @@
 import mongoose from "mongoose";
+import Joi from "joi";
 
-const Task = mongoose.model(
+export const Task = mongoose.model(
   "Task",
   new mongoose.Schema({
     name: {
@@ -23,8 +24,24 @@ const Task = mongoose.model(
       type: Date,
       required: true,
     },
-    comments: String,
+    comments: {
+      type: String,
+      minlength: 0,
+      maxlength: 255,
+    },
   })
 );
 
-export default Task;
+function validateTask(task) {
+  const schema = Joi.object({
+    name: Joi.string().min(5).max(50).required(),
+    assignee: Joi.string().min(5).max(50).required(),
+    frequency: Joi.number().min(0).max(30).required(),
+    due_date: Joi.date().required(),
+    comments: Joi.string().min(0).max(255),
+  });
+
+  return schema.validate(task);
+}
+
+export { validateTask as validate };
