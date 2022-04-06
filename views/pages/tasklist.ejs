@@ -81,7 +81,14 @@
             >
               Close
             </button>
-            <button type="button" class="btn btn-primary">Save</button>
+            <button
+              type="button"
+              id="submitNewTask"
+              class="btn btn-primary"
+              data-bs-dismiss="modal"
+            >
+              Save
+            </button>
           </div>
         </div>
       </div>
@@ -97,7 +104,12 @@
     <%- include('../partials/footer'); %>
     <script type="module">
       import { TaskAPI } from "/js/taskapi.js";
+      import taskSubmit from "/js/task.js";
       TaskAPI.getTasks();
+
+      document
+        .getElementById("submitNewTask")
+        .addEventListener("click", taskSubmit);
     </script>
   </body>
 </html>
