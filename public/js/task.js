@@ -16,4 +16,17 @@ export default function taskSubmit() {
   };
 
   TaskAPI.saveTask(task);
+  successAlert();
+}
+
+function successAlert() {
+  let notificationDiv = document.getElementById("notifications");
+
+  notificationDiv.innerHTML = `<div id="newTaskAlert" class="alert alert-success alert-dismissible fade show" role="alert">
+<strong>Success!</strong> Added new task.
+<button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+</div>`;
+
+  let bsAlert = new bootstrap.Alert(document.getElementById("newTaskAlert"));
+  setTimeout(() => bsAlert.close(), 1500);
 }

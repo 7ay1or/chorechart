@@ -6,29 +6,33 @@
 
   <body>
     <%- include('../partials/header'); %>
+
+    <!--add task button-->
     <button
       type="button"
       class="btn btn-primary"
       data-bs-toggle="modal"
-      data-bs-target="#newTaskModal"
+      data-bs-target="#modal-1"
     >
-      New Task
+      Add task
     </button>
 
+    <!--add task modal-->
+
     <div
-      class="modal fade"
-      id="newTaskModal"
+      id="modal-1"
+      class="modal fade show"
+      role="dialog"
       tabindex="-1"
-      aria-labelledby="newTaskModal"
-      aria-hidden="true"
+      style="display: none"
     >
-      <div class="modal-dialog">
+      <div class="modal-dialog" role="document">
         <div class="modal-content">
           <div class="modal-header">
-            <h5 class="modal-title" id="newTaskModal">New Task</h5>
+            <h4 class="modal-title">New Task</h4>
             <button
-              type="button"
               class="btn-close"
+              type="button"
               data-bs-dismiss="modal"
               aria-label="Close"
             ></button>
@@ -46,17 +50,16 @@
               /><label class="form-label" for="assignee">Assignee</label
               ><select id="assignee" class="form-select" required>
                 <optgroup label="Assignee">
-                  <option selected>Roommate A</option>
-                  <option>Roommate B</option>
-                  <option>Roommate C</option>
+                  <option value selected>Roommate A</option>
+                  <option value>Roommate B</option>
+                  <option value>Roommate C</option>
                 </optgroup></select
               ><label class="form-label" for="frequency">Frequency</label
               ><select id="frequency" class="form-select" required>
                 <optgroup label="Frequency">
-                  <option value="0" selected>One-time</option>
-                  <option value="1">Daily</option>
-                  <option value="7">Weekly</option>
-                  <option value="30">Monthly</option>
+                  <option value selected>Daily</option>
+                  <option value>Weekly</option>
+                  <option value>Monthly</option>
                 </optgroup></select
               ><label class="form-label" for="duedate">Due Date</label
               ><input
@@ -74,27 +77,17 @@
             </form>
           </div>
           <div class="modal-footer">
-            <button
-              type="button"
-              class="btn btn-secondary"
-              data-bs-dismiss="modal"
-            >
-              Close
-            </button>
-            <button
-              type="button"
-              id="submitNewTask"
-              class="btn btn-primary"
-              data-bs-dismiss="modal"
-            >
-              Save
-            </button>
+            <button class="btn btn-light" type="button" data-bs-dismiss="modal">
+              Close</button
+            ><button class="btn btn-primary" type="button">Save</button>
           </div>
         </div>
       </div>
     </div>
 
+    <!--task container-->
     <div class="container w-75">
+      <div id="successAlert"></div>
       <div class="card">
         <div class="card-header"><span>Tasks</span></div>
         <ul id="tasklist" class="list-group list-group-flush"></ul>
@@ -104,12 +97,7 @@
     <%- include('../partials/footer'); %>
     <script type="module">
       import { TaskAPI } from "/js/taskapi.js";
-      import taskSubmit from "/js/task.js";
       TaskAPI.getTasks();
-
-      document
-        .getElementById("submitNewTask")
-        .addEventListener("click", taskSubmit);
     </script>
   </body>
 </html>
